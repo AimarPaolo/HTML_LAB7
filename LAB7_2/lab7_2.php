@@ -11,9 +11,10 @@
             if(isset($_REQUEST['testo']) && $_REQUEST['testo'] != ""){
                 $testo = $_REQUEST['testo'];
                 echo "<p>il testo inserito nel form è: $testo</p>";
-            }else{
+            }else
                 echo "<p>DOVEVI INSERIRE UN VALORE NEL CAMPO DI TESTO</p>"
-            }
+            //non si possono inserire le parentesi graffe se il valore è
+            //uno solo, è necessario avere più valori se le si vuole aggiungere
         ?>
     </body>
 </html>
