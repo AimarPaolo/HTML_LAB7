@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 7.2</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Paolo Aimar">
+        <script>
+            "use strict";
+            function validateForm(f){
+                let testo = document.getElementById(f).testo.value;
+                if(testo != ""){
+                    return true;
+                }else{
+                    window.alert("è necessario inserire un valore dentro alla casella di input...");
+                    return false;
+                }
+                    
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="LAB7_2.php" method="GET" id="form1" onsubmit="return validateForm('form1');">
+            <p>Inserire un valore da mandare al server: </p>
+            <div>
+                <input type="text" id="testo" placeholder="inserire una stringa">
+                <input type="submit">
+                <input type="reset" id="clear">
+                
+            </div>
+
+        </form>
+    </body>
+</html>
