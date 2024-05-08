@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 7.3</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Paolo Aimar">
+        <script>
+            "use strict";
+            function validateForm(formId){
+                let n1 = document.getElementById(formId).val1.value;
+                let n2 = document.getElementById(formId).val2.value;
+                if(n1 != "" && n2 !== ""){
+                    return true;
+                }else{
+                    window.alert("è necessario inserire un valore dentro le caselle di input...");
+                    return false;
+                }
+                    
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="LAB7_3.php" method="GET" id="form1" onsubmit="return validateForm('form1');">
+            <p>Inserire i due valori che si vuole sommare: </p>
+            <div>
+                <input type="number" name="val1" id="val1" placeholder="inserire il primo numero da sommare">
+                <input type="number" name="val2" id="val2" placeholder="inserire il secondo numero da sommare">
+                <input type="submit" value="Somma">
+                <input type="reset" id="clear" value="Cancella">
+            </div>
+        </form>
+    </body>
+</html>
