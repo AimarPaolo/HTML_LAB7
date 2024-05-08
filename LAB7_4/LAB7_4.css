@@ -1,0 +1,7 @@
+h1 { text-align:center; size: 1em;}
+/*allineo h1 al centro e modifico i bordi della tabella, inserendo dei margini automatici*/
+table { border: 0.3em solid red; margin:auto;}
+th,td {border: 0.1em solid black; text-align:center; padding:0.5em; }
+/*in questo caso dò delle determinate caratteristiche al testo e agli header della tabella*/
+th { font-style: italic }
+/*si potrebbe rimpicciolire ancora leggermente il tag 'h1'*/

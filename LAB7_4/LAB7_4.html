@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 7.4</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Paolo Aimar">
+        <script>
+            "use strict";
+            function validateForm(formId){
+                let menu = document.getElementById(formId).menu1.value;
+                if(menu != ""){
+                    return true;
+                }else{
+                    window.alert("è necessario inserire un valore dentro le caselle di input...");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="LAB7_4.php" method="GET" id="form1" onsubmit="return validateForm('form1');">
+            <h1>Men&ugrave; a tendina per creare tabella quadrati e cubi di un numero</h1>
+            <div>
+                <div>Inserire un numero compreso tra 1 e 10 per crearne una tabella dei quadrati e dei cubi: <select name="menu1" id="menu1">
+                    <option value="1" label="1"></option>
+                    <option value="2" label="2"></option>
+                    <option value="3" label="3"></option>
+                    <option value="4" label="4"></option>
+                    <option value="5" label="5"></option>
+                    <option value="6" label="6"></option>
+                    <option value="7" label="7"></option>
+                    <option value="8" label="8"></option>
+                    <option value="9" label="9"></option>
+                    <option value="10" label="10"></option>
+                </select></div>
+                <input type="submit" value="Crea tabella!">
+                <input type="reset" id="clear" value="Cancella">
+            </div>
+        </form>
+    </body>
+</html>
