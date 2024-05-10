@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 7.5</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Paolo Aimar">
+        <script>
+            "use strict";
+            function validateForm(formId){
+                let numero = document.getElementById(formId).prezzoProd.value;
+                let nome = document.getElementById(formId).nomeProd.value;
+                var regexp=/[^0-9.]/;
+                var regexp2= /^[\d]*(\.)[\d]{0,2}$/;
+               
+                var valid = false;
+                
+                if(numero == ""){
+                    alert("Nessun importo inserito!");
+                    return false;
+                }
+                else if(/(\.)/.test(numero) && !regexp2.test(numero)){
+                    alert("Sono consentiti solo numeri naturali con massimo 2 cifre decimali. Ed un solo \".\" di separazione.");
+                    return false;
+                }
+                else if(regexp.test(numero)){
+                    alert("Sono consentiti solo numeri interi o naturali con massimo 2 cifre decimali, separate con il \".\" .");
+                    return false;
+                }else if(nome == ""){
+                    alert("Nessun nome inserito");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form action="LAB7_6.php" method="GET" id="form1" onsubmit="return validateForm('form1');">
+            <p>inserire qui il nome di un prodotto: 
+                <input type="text" name="nomeProd" id="nomeProd" placeholder="inserire il nome del prodotto">
+            </p>
+            <p>inserire qui il prezzo di un prodotto: 
+                <input type="text" name="prezzoProd" id="prezzoProd" placeholder="inserire il prezzo del prodotto">
+            </p>
+            <p>inserire il tipo di iva che si desidera applicare: </p>
+            <div>
+                <input type="radio" name="button1" value="0.04" checked>minima
+                <!--inserendo il comando checked non è necessario inserire il controllo relativo al radio button-->
+            </div>
+            <div>
+                <input type="radio" name="button1" value="0.1" >ridotta
+            </div>
+            <div>
+                <input type="radio" name="button1" value="0.22" >ordinaria
+            </div>
+            <div>
+                <input type="checkbox" id="check1" name="check1">modalit&agrave; debug
+            </div>
+            <p>
+                <input type="submit" value="Calcola prezzo">
+                <input type="reset" id="clear" value="Cancella">
+            </p>
+        </form>
+    </body>
+</html>
